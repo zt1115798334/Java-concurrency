@@ -89,7 +89,7 @@ happens-before的概念最初由Leslie Lamport在其一篇影响深远的论文�
 4. 传递性：如果A happens-before B，且B happens-before C，那么A happens-before C。
 5. start()规则：如果线程A执行操作ThreadB.start()（启动线程B），那么A线程的ThreadB.start()操作happens-before于线程B中的任意操作。
 6. join()规则：如果线程A执行操作ThreadB.join()并成功返回，那么线程B中的任意操作happens-before于线程A从ThreadB.join()操作成功返回。
-7. 程序中断规则：对线程interrupted()方法的调用先行于被中断线程的代码检测到中断时间的发生。
+7. 程序中程interrupted()方法的调用先行于被中断线程的代码检测到中断时间的发生。
 7. 对象finalize规则：一个对象的初始化完成（构造函数执行结束）先行于发生它的finalize()方法的开始。
 
 下面以一个**具体的例子来讲下如何使用这些规则进行推论**：
